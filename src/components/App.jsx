@@ -1,16 +1,29 @@
-export const App = () => {
+import { ContactForm } from './ContactForm/ContactForm';
+import { Filter } from './Filter/Filter';
+import { ContactList } from './ContactList/ContactList';
+import { Loader } from './Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getContacts } from 'redux/operations';
+import { getIsloading } from 'redux/selectors';
+
+export function App() {
+  const isLoading = useSelector(getIsloading);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getContacts());
+  }, [dispatch]);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <div style={{ marginLeft: '30px' }}>
+        {isLoading && <Loader />}
+        <h1>Phonebook</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <Filter />
+        <ContactList />
+      </div>
+    </>
   );
-};
+}
