@@ -1,11 +1,12 @@
 import { ContactForm } from './ContactForm/ContactForm';
+
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
-import { Loader } from './Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getContacts } from 'redux/operations';
 import { getIsloading } from 'redux/selectors';
+import { Loader } from 'components/Loader/Loader';
 
 export function App() {
   const isLoading = useSelector(getIsloading);

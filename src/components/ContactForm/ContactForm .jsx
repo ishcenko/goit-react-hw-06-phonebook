@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { addContact } from 'redus/operation';
-import { Button, Input, Form, Label } from './ContactForm .styled';
-import { selectContacts } from 'redus/selectors';
+import { addContact } from 'redux/operations';
+import { Button, Input, Form, Label } from './ContactForm.styled';
+import { selectContacts } from 'redux/selectors';
 
 export function ContactForm({ onSubmit }) {
-  const contact = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
@@ -23,12 +23,10 @@ export function ContactForm({ onSubmit }) {
         break;
     }
   };
-
   const resetForm = () => {
     setName('');
     setNumber('');
   };
-
   const handleSubmit = event => {
     event.preventDefault();
     const isExist = contacts.find(contact => {
@@ -38,9 +36,11 @@ export function ContactForm({ onSubmit }) {
       alert('This contact is existed!!!!');
       return;
     }
+
     dispatch(addContact({ name, number }));
     resetForm();
   };
+
   return (
     <Form onSubmit={handleSubmit}>
       <Label>

@@ -1,39 +1,29 @@
-import PropTypes from 'prop-types';
-import { Button, List, Item } from './ContactList.styled';
-import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContact } from 'redux/selectors';
-import { deleteContact } from 'redux/operations';
-export function ContactList() {
-  const contacts = useSelector(getFilteredContact);
-  const dispatch = useDispatch();
-  const handleDelete = id => {
-    dispatch(deleteContact(id));
-  };
+import styled from 'styled-components';
 
-  return (
-    <List>
-      {contacts
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map(({ name, phone, id }) => {
-          return (
-            <Item key={id}>
-              <p>
-                <b>{name}:</b>{' '}
-              </p>{' '}
-              <p>{phone}</p>
-              <Button onClick={() => handleDelete(id)}>DELETE</Button>
-            </Item>
-          );
-        })}
-    </List>
-  );
-}
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-};
+
+export const Button = styled.button`
+  background-color: #cf3535;
+  color: white;
+  margin-left: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  
+  &:hover {
+   background-color : #e91e63;
+  }
+`;
+export const List = styled.ul`
+display: flex;
+flex-direction: column;
+
+gap: 0.5em;`;
+export const Item = styled.li`
+display: flex;
+justify-content: space-between;
+width: 30%;
+`;

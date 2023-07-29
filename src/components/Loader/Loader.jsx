@@ -1,26 +1,32 @@
 import React from 'react';
-import { Vortex } from 'react-loader-spinner';
+import { Puff } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
     <div
       style={{
-        margin: '0 auto',
-        minHeight: '170 ',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        zIndex: '2',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
+        background: 'rgba(0, 0, 0, 0.2)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: '400',
       }}
     >
-      <Vortex
-        visible={true}
+      <Puff
         height="80"
         width="80"
-        ariaLabel="vortex-loading"
+        radius={1}
+        color="#4fa94d"
+        ariaLabel="puff-loading"
         wrapperStyle={{}}
-        wrapperClass="vortex-wrapper"
-        colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+        wrapperClass=""
+        visible={true}
       />
     </div>
   );
