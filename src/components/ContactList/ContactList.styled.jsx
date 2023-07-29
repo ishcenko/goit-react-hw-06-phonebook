@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-
 export const Button = styled.button`
-  background-color: #cf3535;
+  background-color: #fd0303;
   color: white;
   margin-left: 20px;
   padding: 5px;
@@ -12,18 +11,19 @@ export const Button = styled.button`
   border-radius: 10px;
   font-weight: 600;
   text-transform: capitalize;
-  
+
   &:hover {
-   background-color : #e91e63;
+    background-color: #9f0404;
   }
 `;
 export const List = styled.ul`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-gap: 0.5em;`;
+  gap: 20px;
+`;
 export const Item = styled.li`
-display: flex;
-justify-content: space-between;
-width: 30%;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
 `;
