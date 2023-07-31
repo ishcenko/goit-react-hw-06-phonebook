@@ -2,12 +2,10 @@
 @import-normalize;
 
 body {
-  width: 600px;
-  height: 700px;
-  background: blueviolet;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
+  background: linear-gradient(to right, #62c8f3, #8aedbd, #f3c80782, #77f3b5);
+
+  /* width: 600px; */
+  /* height: 700px; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

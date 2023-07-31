@@ -17,7 +17,7 @@ export function App() {
 
   return (
     <>
-      <div style={{ marginLeft: '30px' }}>
+      <div style={{ marginLeft: '37%', marginRight: '50%', marginTop: '50px' }}>
         {isLoading && <Loader />}
         <h1>Phonebook</h1>
         <ContactForm />

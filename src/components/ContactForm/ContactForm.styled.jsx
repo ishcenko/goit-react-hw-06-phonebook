@@ -1,12 +1,26 @@
 import styled from 'styled-components';
 
+export const Div = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+`;
+
 export const Button = styled.button`
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   background: rgb(235, 244, 106);
   border: none;
   border-radius: 20px;
   width: 150px;
-  margin: 30px auto 50px;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+  margin-left: 120px;
+  text-align: center;
+  /* justify-content: center; */
+  /* margin: 30px auto 50px; */
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
@@ -30,7 +44,7 @@ export const Input = styled.input`
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 250px;
+  width: 400px;
   cursor: pointer;
   background: linear-gradient(45deg, rgb(245, 214, 121), rgb(243, 150, 122));
   -webkit-box-align: center;
