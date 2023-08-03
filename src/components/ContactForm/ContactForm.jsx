@@ -1,34 +1,34 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form } from './ContactForm.styled';
-
-import { addContact } from '../../redux/contactSlice';
+import { addContact } from '../../redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
 
 function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
-  const handlerSubmit = event => {
-    event.preventDefault();
+  const handlerSubmit = e => {
+    e.preventDefault();
 
-    const name = event.target.elements.number.value;
+    const name = e.target.elements.name.value;
     if (contacts.find(el => el.name === name)) {
-      alert(name + 'already exists in the phone book');
-      event.target.reset();
+      alert(name + ' already exists in the phone book');
+      e.target.reset();
       return;
     }
-    const number = event.target.elements.number.value;
+    const number = e.target.elements.number.value;
     const newContact = {
       id: nanoid(),
       name,
       number,
     };
     dispatch(addContact(newContact));
-    event.target.reset();
+    e.target.reset();
   };
+
   return (
     <Form onSubmit={handlerSubmit}>
-      <label htmlFor="name">Name</label>
+      <label htmlFor="name">Name </label>
       <input
         id="name"
         type="text"
@@ -38,7 +38,7 @@ function ContactForm() {
         required
       />
 
-      <label htmlFor="tel">Number</label>
+      <label htmlFor="tel">Number </label>
       <input
         id="tel"
         type="tel"

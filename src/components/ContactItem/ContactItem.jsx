@@ -1,5 +1,6 @@
 import { Item } from './ContactItem.styled';
 import { deleteContact } from '../../redux/contactsSlice';
+
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 

@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialData } from '../data';
+import { initialData } from '../data.js';
 
-const contactsSlise = createSlice({
+const contactsSlice = createSlice({
   name: 'contacts',
-  initialData: initialData,
+  initialState: initialData,
   reducers: {
     addContact: {
       reducer(state, action) {
         state.push(action.payload);
       },
     },
+
     deleteContact(state, action) {
       const i = state.findIndex(contact => contact.id === action.payload);
       state.splice(i, 1);
@@ -17,5 +18,5 @@ const contactsSlise = createSlice({
   },
 });
 
-export const contactsReducer = contactsSlise.reducer;
-export const { deleteContact, addContact } = contactsSlise.actions;
+export const contactsReducer = contactsSlice.reducer;
+export const { deleteContact, addContact } = contactsSlice.actions;
