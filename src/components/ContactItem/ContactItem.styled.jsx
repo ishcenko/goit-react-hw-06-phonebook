@@ -1,26 +1,32 @@
 import styled from 'styled-components';
 
 export const Item = styled.li`
-  width: 300px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  :nth-of-type(odd) {
-    background-color: #ddd;
-  }
-  button {
-    padding: 2px 5px;
-    margin-left: 10px;
-    background-color: #c00;
-    color: white;
-    border: none;
-    border-radius: 5px;
 
-    :hover {
+  p {
+    color: #070707;
+    font-size: 20px;
+    padding-left: 25px;
+    justify-content: space-between;
+  }
+
+  button {
+    padding: 6px 12px;
+    /* margin-left: 10px; */
+    background: #c00;
+    color: #0e0e0e;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 75px;
+
+    &hover {
       background-color: #f00;
       color: white;
     }
-    :active {
+    &active {
       transform: scale(1.1);
     }
   }

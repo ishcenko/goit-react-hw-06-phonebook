@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 30%;
+  width: 50%;
   margin-top: 50px;
   label {
     display: block;

@@ -1,10 +1,9 @@
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
-
 function App() {
   return (
-    <div>
+    <div style={{ marginLeft: '40%', marginTop: '5%' }}>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
